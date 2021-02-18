@@ -1,5 +1,6 @@
 package com.kirillkurko.taskmanager.controller;
 
+import com.kirillkurko.taskmanager.model.entity.Employee;
 import com.kirillkurko.taskmanager.model.entity.Task;
 import com.kirillkurko.taskmanager.model.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,5 +60,17 @@ public class TaskController {
             exception.printStackTrace();
         }
         return "Task with id - " + taskId + " not found";
+    }
+
+    @PutMapping("/tasks/{taskId}")
+    public void addTask(@PathVariable int taskId, @RequestBody Employee employee) {
+        try {
+            Task task = taskService.findById(taskId);
+            task.addEmployee(employee);
+            taskService.save(task);
+        }
+        catch (RuntimeException exception) {
+            exception.printStackTrace();
+        }
     }
 }

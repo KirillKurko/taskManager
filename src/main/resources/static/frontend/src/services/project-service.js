@@ -1,4 +1,4 @@
-export default class ProjectServiceService {
+export default class ProjectService {
 
     _apiBase = "http://localhost:8080/api";
 
