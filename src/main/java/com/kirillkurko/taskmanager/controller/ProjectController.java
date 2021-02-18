@@ -1,6 +1,7 @@
 package com.kirillkurko.taskmanager.controller;
 
 import com.kirillkurko.taskmanager.model.entity.Project;
+import com.kirillkurko.taskmanager.model.entity.Task;
 import com.kirillkurko.taskmanager.model.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -59,5 +60,17 @@ public class ProjectController {
             exception.printStackTrace();
         }
         return "Project with id - " + projectId + " not found";
+    }
+
+    @PutMapping("/projects/{projectId}")
+    public void addTask(@PathVariable int projectId, @RequestBody Task task) {
+        try {
+            Project project = projectService.findById(projectId);
+            project.addTask(task);
+            projectService.save(project);
+        }
+        catch (RuntimeException exception) {
+            exception.printStackTrace();
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.kirillkurko.taskmanager.model.service.implementation;
 
 import com.kirillkurko.taskmanager.model.entity.Project;
+import com.kirillkurko.taskmanager.model.entity.Task;
 import com.kirillkurko.taskmanager.model.repository.ProjectRepository;
 import com.kirillkurko.taskmanager.model.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;

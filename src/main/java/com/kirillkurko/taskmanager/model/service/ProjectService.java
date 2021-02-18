@@ -1,6 +1,7 @@
 package com.kirillkurko.taskmanager.model.service;
 
 import com.kirillkurko.taskmanager.model.entity.Project;
+import com.kirillkurko.taskmanager.model.entity.Task;
 
 import java.util.List;
 
