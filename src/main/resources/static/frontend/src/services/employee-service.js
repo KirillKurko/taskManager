@@ -20,7 +20,7 @@ export default class EmployeeService {
     }
 
     saveEmployee = async (employee) => {
-        const res = await fetch(`${this._apiBase}`,
+        const res = await fetch(`${this._apiBase}/employees`,
                                 {method: employee.id ? "PUT" : "POST",
                                      headers: {'Accept': 'application/json',
                                                'Content-Type': 'application/json'
