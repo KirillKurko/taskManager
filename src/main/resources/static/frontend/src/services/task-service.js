@@ -39,7 +39,7 @@ export default class TaskService {
         const res = await fetch(`${this._apiBase}/tasks/${id}`,
             {method: "PUT",
                 headers: {'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                          'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(employee)
             });
